@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+	<title>Account Form By MoDeW</title>
+	<link rel="stylesheet" href="style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://kit.fontawesome.com/0ce963a9b8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="form-container">
+		<div class="form active" id="registration-form">
+			<form action="#" method="POST">
+				<h1>Register</h1>
+				<div class="input-wrapper">
+					<input type="text" placeholder="Name ( max : 10 length )" maxlength="10" required>
+					<label for="stuff" class="fa fa-user input-icon"></label>
+				</div>
+				<div class="input-wrapper">
+					<input type="email" placeholder="E-mail" required>
+					<label for="stuff" class="fa fa-envelope input-icon"></label>
+				</div>
+				<div class="input-wrapper">
+					<input type="password" placeholder="Pass Word" id="pwd" required>
+					<label for="stuff" class="fa fa-lock input-icon"></label>
+				</div>
+				<p><span id="progresslabel"></span></p>
+				<br>
+				<button type="submit">CREATE <i class="fa fa-arrow-right"></i></button>
+				<button onclick="login()"><i class="fa fa-arrow-left"></i> LOGIN</button>
+			</form>
+		</div>
+		<div class="form" id="login-form">
+			<form action="#" method="POST">
+				<h1>Login</h1>
+				<div class="input-wrapper">
+					<input type="email" placeholder="E-mail" required>
+					<label for="stuff" class="fa fa-envelope input-icon"></label>
+				</div>
+				<div class="input-wrapper">
+					<input type="password" placeholder="Pass Word" required>
+					<label for="stuff" class="fa fa-lock input-icon"></label>
+				</div>
+				<button type="submit">LOGIN <i class="fa fa-arrow-right"></i></button>
+				<button onclick="register()"><i class="fa fa-arrow-left"></i> SIGN UP</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script>
+const loginForm = document.getElementById("login-form");
+const registerForm = document.getElementById("registration-form");
+loginForm.style = 'display: block;';
+
+function login() {
+  registerForm.style.opacity = "0";
+  registerForm.style.transition = "opacity 0.3s ease-out";
+  setTimeout(() => {
+    registerForm.style.display = "none";
+    loginForm.style.opacity = "1";
+    loginForm.style.display = "block";
+    loginForm.style.transition = "opacity 0.3s ease-out";
+  }, 300);
+}
+
+function register() {
+  loginForm.style.opacity = "0";
+  loginForm.style.transition = "opacity 0.3s ease-out";
+  setTimeout(() => {
+    loginForm.style.display = "none";
+    registerForm.style.opacity = "1";
+    registerForm.style.display = "block";
+    registerForm.style.transition = "opacity 0.3s ease-out";
+  }, 300);
+}
+var password = document.getElementById("pwd");
+password.addEventListener('keyup', function() {
+
+  var pwd = password.value
+
+  if (pwd.length === 0) {
+    document.getElementById("progresslabel").innerHTML = "";
+    return;
+  }
+
+  var prog = [/[$@$!%*#?&]/, /[A-Z]/, /[0-9]/, /[a-z]/]
+    .reduce((memo, test) => memo + test.test(pwd), 0);
+
+  if(prog > 2 && pwd.length > 7){
+    prog++;
+  }
+
+  var strength = "";
+  switch (prog) {
+    case 0:
+    case 1:
+    case 2:
+      strength = "Weak";
+      break;
+    case 3:
+      strength = "Normal";
+      break;
+    case 4:
+      strength = "Good";
+      break;
+    case 5:
+      strength = "Very Good";
+      break;
+  }
+  document.getElementById("progresslabel").innerHTML = strength;
+
+});
+</script>
+</html>
