@@ -7,7 +7,10 @@ _________________________________________
 - Register and Login in one file
 _________________________________________
 # Preview
-![Token Builder](https://github.com/Hoseinfi/card-portifilo/blob/main/img%20(%20intro%20).png)
+- Login Form
+![Token Builder](https://github.com/Hoseinfi/Account-form/blob/main/intro(img1).png)
+- Register Form
+![Token Builder](https://github.com/Hoseinfi/Account-form/blob/main/intro(img2).png)
 _________________________________________
 # Install
 - please change code `index.html`
