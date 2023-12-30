@@ -10,9 +10,9 @@ _________________________________________
 _________________________________________
 # Preview
 - Login Form
-![Token Builder](https://github.com/Hoseinfi/Account-form/blob/main/intro(img1).png)
+![img](https://github.com/Hoseinfi/Account-form/blob/main/intro(img1).png)
 - Register Form
-![Token Builder](https://github.com/Hoseinfi/Account-form/blob/main/intro(img2).png)
+![img](https://github.com/Hoseinfi/Account-form/blob/main/intro(img2).png)
 _________________________________________
 # Install
 - please change code `index.html`
